@@ -1,47 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.1.2 (Python 3.7.5 on linux)" generated="20200422 01:37:29.745" rpa="false">
+<robot generator="Robot 3.1.2 (Python 3.7.5 on linux)" generated="20200423 00:16:06.892" rpa="false">
 <suite id="s1" name="Testcases" source="/home/deadpool/PycharmProjects/1Tab_Automation/1Tab_WebApp/Testcases">
 <suite id="s1-s1" name="EndToEnd" source="/home/deadpool/PycharmProjects/1Tab_Automation/1Tab_WebApp/Testcases/EndToEnd.robot">
-<test id="s1-s1-t1" name="Smoke Testing of a build">
-<kw name="Website is up and running" library="Keywords" type="setup">
+<kw name="Website is up and running" library="Common" type="setup">
 <kw name="Open Browser" library="SeleniumLibrary">
 <doc>Opens a new browser instance to the optional ``url``.</doc>
 <arguments>
-<arg>https://prod.1tab.com/</arg>
-<arg>Chrome</arg>
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
 </arguments>
-<msg timestamp="20200422 01:37:32.559" level="INFO">Opening browser 'Chrome' to base url 'https://prod.1tab.com/'.</msg>
-<status status="PASS" starttime="20200422 01:37:32.559" endtime="20200422 01:38:02.576"></status>
+<msg timestamp="20200423 00:16:07.505" level="INFO">Opening browser 'Chrome' to base url 'https://prod.1tab.com/'.</msg>
+<status status="PASS" starttime="20200423 00:16:07.505" endtime="20200423 00:16:23.981"></status>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20200422 01:38:02.577" endtime="20200422 01:38:02.913"></status>
+<status status="PASS" starttime="20200423 00:16:23.982" endtime="20200423 00:16:24.277"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>3s</arg>
 </arguments>
-<msg timestamp="20200422 01:38:05.914" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20200422 01:38:02.913" endtime="20200422 01:38:05.914"></status>
+<msg timestamp="20200423 00:16:27.278" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20200423 00:16:24.277" endtime="20200423 00:16:27.278"></status>
 </kw>
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
 <arguments>
 <arg>${company_Info}</arg>
 </arguments>
-<status status="PASS" starttime="20200422 01:38:05.915" endtime="20200422 01:38:05.971"></status>
+<status status="PASS" starttime="20200423 00:16:27.279" endtime="20200423 00:16:27.329"></status>
 </kw>
-<status status="PASS" starttime="20200422 01:37:32.557" endtime="20200422 01:38:05.971"></status>
+<status status="PASS" starttime="20200423 00:16:07.505" endtime="20200423 00:16:27.329"></status>
 </kw>
-<kw name="User logs in to the website" library="Keywords">
+<test id="s1-s1-t1" name="Smoke Testing of a build">
+<kw name="User logs in to the website" library="Login_Signup">
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>${signIn_Link}</arg>
 </arguments>
-<msg timestamp="20200422 01:38:05.973" level="INFO">Clicking element 'xpath=(//div[@class="p-1 tab_options_btns ng-tns-c8-0 ng-star-inserted"])[1]'.</msg>
-<status status="PASS" starttime="20200422 01:38:05.972" endtime="20200422 01:38:06.340"></status>
+<msg timestamp="20200423 00:16:27.331" level="INFO">Clicking element 'xpath=(//div[@class="p-1 tab_options_btns ng-tns-c8-0 ng-star-inserted"])[1]'.</msg>
+<status status="PASS" starttime="20200423 00:16:27.331" endtime="20200423 00:16:27.730"></status>
 </kw>
 <kw name="Get Row Count" library="ExcelOperations">
 <arguments>
@@ -51,8 +51,8 @@
 <assign>
 <var>${max_rows}</var>
 </assign>
-<msg timestamp="20200422 01:38:06.532" level="INFO">${max_rows} = 3</msg>
-<status status="PASS" starttime="20200422 01:38:06.340" endtime="20200422 01:38:06.532"></status>
+<msg timestamp="20200423 00:16:27.925" level="INFO">${max_rows} = 3</msg>
+<status status="PASS" starttime="20200423 00:16:27.730" endtime="20200423 00:16:27.925"></status>
 </kw>
 <kw name="Get Column Count" library="ExcelOperations">
 <arguments>
@@ -62,8 +62,8 @@
 <assign>
 <var>${max_cols}</var>
 </assign>
-<msg timestamp="20200422 01:38:06.537" level="INFO">${max_cols} = 4</msg>
-<status status="PASS" starttime="20200422 01:38:06.532" endtime="20200422 01:38:06.537"></status>
+<msg timestamp="20200423 00:16:27.931" level="INFO">${max_cols} = 4</msg>
+<status status="PASS" starttime="20200423 00:16:27.925" endtime="20200423 00:16:27.931"></status>
 </kw>
 <kw name="${row_num} IN RANGE [ 0 | ${max_rows} ]" type="for">
 <kw name="${row_num} = 0" type="foritem">
@@ -77,8 +77,8 @@
 <assign>
 <var>${user_Username}</var>
 </assign>
-<msg timestamp="20200422 01:38:06.560" level="INFO">${user_Username} = abc@xyz</msg>
-<status status="PASS" starttime="20200422 01:38:06.537" endtime="20200422 01:38:06.560"></status>
+<msg timestamp="20200423 00:16:27.937" level="INFO">${user_Username} = abc@xyz</msg>
+<status status="PASS" starttime="20200423 00:16:27.932" endtime="20200423 00:16:27.937"></status>
 </kw>
 <kw name="Read Data From Excel" library="ExcelOperations">
 <arguments>
@@ -90,8 +90,8 @@
 <assign>
 <var>${user_Password}</var>
 </assign>
-<msg timestamp="20200422 01:38:06.566" level="INFO">${user_Password} = Anuvrat@1</msg>
-<status status="PASS" starttime="20200422 01:38:06.560" endtime="20200422 01:38:06.566"></status>
+<msg timestamp="20200423 00:16:27.943" level="INFO">${user_Password} = Anuvrat@1</msg>
+<status status="PASS" starttime="20200423 00:16:27.938" endtime="20200423 00:16:27.943"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -100,8 +100,8 @@
 <arg>${user_Username}</arg>
 <arg>clear=True</arg>
 </arguments>
-<msg timestamp="20200422 01:38:06.566" level="INFO">Typing text 'abc@xyz' into text field 'xpath=//input[@id="user_input"]'.</msg>
-<status status="PASS" starttime="20200422 01:38:06.566" endtime="20200422 01:38:06.776"></status>
+<msg timestamp="20200423 00:16:27.943" level="INFO">Typing text 'abc@xyz' into text field 'xpath=//input[@id="user_input"]'.</msg>
+<status status="PASS" starttime="20200423 00:16:27.943" endtime="20200423 00:16:28.188"></status>
 </kw>
 <kw name="Input Password" library="SeleniumLibrary">
 <doc>Types the given password into the text field identified by ``locator``.</doc>
@@ -110,27 +110,27 @@
 <arg>${user_Password}</arg>
 <arg>clear=True</arg>
 </arguments>
-<msg timestamp="20200422 01:38:06.776" level="INFO">Typing password into text field 'xpath=//input[@id="password"]'.</msg>
-<msg timestamp="20200422 01:38:06.830" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20200422 01:38:06.966" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20200422 01:38:06.776" endtime="20200422 01:38:06.966"></status>
+<msg timestamp="20200423 00:16:28.189" level="INFO">Typing password into text field 'xpath=//input[@id="password"]'.</msg>
+<msg timestamp="20200423 00:16:28.244" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20200423 00:16:28.390" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20200423 00:16:28.188" endtime="20200423 00:16:28.390"></status>
 </kw>
 <kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
 <doc>Waits until the element ``locator`` is enabled.</doc>
 <arguments>
 <arg>${submit_Button}</arg>
 </arguments>
-<status status="PASS" starttime="20200422 01:38:06.967" endtime="20200422 01:38:07.002"></status>
+<status status="PASS" starttime="20200423 00:16:28.390" endtime="20200423 00:16:28.428"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks the button identified by ``locator``.</doc>
 <arguments>
 <arg>${submit_Button}</arg>
 </arguments>
-<msg timestamp="20200422 01:38:07.003" level="INFO">Clicking button 'xpath=//button[@class="btn btn-success tab_yellowbtn w-100"]'.</msg>
-<status status="PASS" starttime="20200422 01:38:07.002" endtime="20200422 01:38:07.093"></status>
+<msg timestamp="20200423 00:16:28.429" level="INFO">Clicking button 'xpath=//button[@class="btn btn-success tab_yellowbtn w-100"]'.</msg>
+<status status="PASS" starttime="20200423 00:16:28.428" endtime="20200423 00:16:28.532"></status>
 </kw>
-<status status="PASS" starttime="20200422 01:38:06.537" endtime="20200422 01:38:07.093"></status>
+<status status="PASS" starttime="20200423 00:16:27.932" endtime="20200423 00:16:28.532"></status>
 </kw>
 <kw name="${row_num} = 1" type="foritem">
 <kw name="Read Data From Excel" library="ExcelOperations">
@@ -143,8 +143,8 @@
 <assign>
 <var>${user_Username}</var>
 </assign>
-<msg timestamp="20200422 01:38:07.099" level="INFO">${user_Username} = s.anuvrat@1tab.com</msg>
-<status status="PASS" starttime="20200422 01:38:07.094" endtime="20200422 01:38:07.099"></status>
+<msg timestamp="20200423 00:16:28.537" level="INFO">${user_Username} = s.anuvrat@1tab.com</msg>
+<status status="PASS" starttime="20200423 00:16:28.532" endtime="20200423 00:16:28.537"></status>
 </kw>
 <kw name="Read Data From Excel" library="ExcelOperations">
 <arguments>
@@ -156,8 +156,8 @@
 <assign>
 <var>${user_Password}</var>
 </assign>
-<msg timestamp="20200422 01:38:07.103" level="INFO">${user_Password} = Anuvrat@2</msg>
-<status status="PASS" starttime="20200422 01:38:07.099" endtime="20200422 01:38:07.103"></status>
+<msg timestamp="20200423 00:16:28.543" level="INFO">${user_Password} = Anuvrat@2</msg>
+<status status="PASS" starttime="20200423 00:16:28.538" endtime="20200423 00:16:28.543"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -166,8 +166,8 @@
 <arg>${user_Username}</arg>
 <arg>clear=True</arg>
 </arguments>
-<msg timestamp="20200422 01:38:07.104" level="INFO">Typing text 's.anuvrat@1tab.com' into text field 'xpath=//input[@id="user_input"]'.</msg>
-<status status="PASS" starttime="20200422 01:38:07.104" endtime="20200422 01:38:07.454"></status>
+<msg timestamp="20200423 00:16:28.543" level="INFO">Typing text 's.anuvrat@1tab.com' into text field 'xpath=//input[@id="user_input"]'.</msg>
+<status status="PASS" starttime="20200423 00:16:28.543" endtime="20200423 00:16:28.914"></status>
 </kw>
 <kw name="Input Password" library="SeleniumLibrary">
 <doc>Types the given password into the text field identified by ``locator``.</doc>
@@ -176,27 +176,27 @@
 <arg>${user_Password}</arg>
 <arg>clear=True</arg>
 </arguments>
-<msg timestamp="20200422 01:38:07.455" level="INFO">Typing password into text field 'xpath=//input[@id="password"]'.</msg>
-<msg timestamp="20200422 01:38:07.506" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20200422 01:38:07.635" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20200422 01:38:07.454" endtime="20200422 01:38:07.635"></status>
+<msg timestamp="20200423 00:16:28.915" level="INFO">Typing password into text field 'xpath=//input[@id="password"]'.</msg>
+<msg timestamp="20200423 00:16:28.971" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20200423 00:16:29.111" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20200423 00:16:28.915" endtime="20200423 00:16:29.111"></status>
 </kw>
 <kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
 <doc>Waits until the element ``locator`` is enabled.</doc>
 <arguments>
 <arg>${submit_Button}</arg>
 </arguments>
-<status status="PASS" starttime="20200422 01:38:07.636" endtime="20200422 01:38:08.180"></status>
+<status status="PASS" starttime="20200423 00:16:29.111" endtime="20200423 00:16:29.139"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks the button identified by ``locator``.</doc>
 <arguments>
 <arg>${submit_Button}</arg>
 </arguments>
-<msg timestamp="20200422 01:38:08.182" level="INFO">Clicking button 'xpath=//button[@class="btn btn-success tab_yellowbtn w-100"]'.</msg>
-<status status="PASS" starttime="20200422 01:38:08.181" endtime="20200422 01:38:08.321"></status>
+<msg timestamp="20200423 00:16:29.140" level="INFO">Clicking button 'xpath=//button[@class="btn btn-success tab_yellowbtn w-100"]'.</msg>
+<status status="PASS" starttime="20200423 00:16:29.140" endtime="20200423 00:16:29.229"></status>
 </kw>
-<status status="PASS" starttime="20200422 01:38:07.094" endtime="20200422 01:38:08.321"></status>
+<status status="PASS" starttime="20200423 00:16:28.532" endtime="20200423 00:16:29.229"></status>
 </kw>
 <kw name="${row_num} = 2" type="foritem">
 <kw name="Read Data From Excel" library="ExcelOperations">
@@ -209,8 +209,8 @@
 <assign>
 <var>${user_Username}</var>
 </assign>
-<msg timestamp="20200422 01:38:08.327" level="INFO">${user_Username} = 9899958909</msg>
-<status status="PASS" starttime="20200422 01:38:08.322" endtime="20200422 01:38:08.327"></status>
+<msg timestamp="20200423 00:16:29.236" level="INFO">${user_Username} = 9899958909</msg>
+<status status="PASS" starttime="20200423 00:16:29.230" endtime="20200423 00:16:29.236"></status>
 </kw>
 <kw name="Read Data From Excel" library="ExcelOperations">
 <arguments>
@@ -222,8 +222,8 @@
 <assign>
 <var>${user_Password}</var>
 </assign>
-<msg timestamp="20200422 01:38:08.332" level="INFO">${user_Password} = Anuvrat@1</msg>
-<status status="PASS" starttime="20200422 01:38:08.327" endtime="20200422 01:38:08.332"></status>
+<msg timestamp="20200423 00:16:29.241" level="INFO">${user_Password} = Anuvrat@1</msg>
+<status status="PASS" starttime="20200423 00:16:29.236" endtime="20200423 00:16:29.241"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -232,8 +232,8 @@
 <arg>${user_Username}</arg>
 <arg>clear=True</arg>
 </arguments>
-<msg timestamp="20200422 01:38:08.332" level="INFO">Typing text '9899958909' into text field 'xpath=//input[@id="user_input"]'.</msg>
-<status status="PASS" starttime="20200422 01:38:08.332" endtime="20200422 01:38:08.527"></status>
+<msg timestamp="20200423 00:16:29.241" level="INFO">Typing text '9899958909' into text field 'xpath=//input[@id="user_input"]'.</msg>
+<status status="PASS" starttime="20200423 00:16:29.241" endtime="20200423 00:16:29.445"></status>
 </kw>
 <kw name="Input Password" library="SeleniumLibrary">
 <doc>Types the given password into the text field identified by ``locator``.</doc>
@@ -242,104 +242,112 @@
 <arg>${user_Password}</arg>
 <arg>clear=True</arg>
 </arguments>
-<msg timestamp="20200422 01:38:08.528" level="INFO">Typing password into text field 'xpath=//input[@id="password"]'.</msg>
-<msg timestamp="20200422 01:38:08.574" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20200422 01:38:08.705" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20200422 01:38:08.528" endtime="20200422 01:38:08.705"></status>
+<msg timestamp="20200423 00:16:29.446" level="INFO">Typing password into text field 'xpath=//input[@id="password"]'.</msg>
+<msg timestamp="20200423 00:16:29.496" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20200423 00:16:29.625" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20200423 00:16:29.446" endtime="20200423 00:16:29.625"></status>
 </kw>
 <kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
 <doc>Waits until the element ``locator`` is enabled.</doc>
 <arguments>
 <arg>${submit_Button}</arg>
 </arguments>
-<status status="PASS" starttime="20200422 01:38:08.705" endtime="20200422 01:38:08.734"></status>
+<status status="PASS" starttime="20200423 00:16:29.625" endtime="20200423 00:16:29.654"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks the button identified by ``locator``.</doc>
 <arguments>
 <arg>${submit_Button}</arg>
 </arguments>
-<msg timestamp="20200422 01:38:08.734" level="INFO">Clicking button 'xpath=//button[@class="btn btn-success tab_yellowbtn w-100"]'.</msg>
-<status status="PASS" starttime="20200422 01:38:08.734" endtime="20200422 01:38:08.812"></status>
+<msg timestamp="20200423 00:16:29.655" level="INFO">Clicking button 'xpath=//button[@class="btn btn-success tab_yellowbtn w-100"]'.</msg>
+<status status="PASS" starttime="20200423 00:16:29.655" endtime="20200423 00:16:29.735"></status>
 </kw>
-<status status="PASS" starttime="20200422 01:38:08.321" endtime="20200422 01:38:08.812"></status>
+<status status="PASS" starttime="20200423 00:16:29.229" endtime="20200423 00:16:29.735"></status>
 </kw>
-<status status="PASS" starttime="20200422 01:38:06.537" endtime="20200422 01:38:08.812"></status>
+<status status="PASS" starttime="20200423 00:16:27.932" endtime="20200423 00:16:29.735"></status>
 </kw>
-<status status="PASS" starttime="20200422 01:38:05.972" endtime="20200422 01:38:08.812"></status>
+<status status="PASS" starttime="20200423 00:16:27.330" endtime="20200423 00:16:29.735"></status>
 </kw>
-<kw name="User adds product to cart from homepage" library="Keywords">
+<kw name="User adds product to cart from homepage" library="HomePage">
 <kw name="Set Selenium Speed" library="SeleniumLibrary">
 <doc>Sets the delay that is waited after each Selenium command.</doc>
 <arguments>
-<arg>1 seconds</arg>
+<arg>0.5 seconds</arg>
 </arguments>
-<status status="PASS" starttime="20200422 01:38:08.813" endtime="20200422 01:38:08.813"></status>
+<status status="PASS" starttime="20200423 00:16:29.736" endtime="20200423 00:16:29.737"></status>
 </kw>
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
 <arguments>
-<arg>${dabur_Sitopladi}</arg>
+<arg>${boroPuls_19ml}</arg>
 </arguments>
+<status status="PASS" starttime="20200423 00:16:29.737" endtime="20200423 00:16:30.257"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${viccoTurmeric_AddToCart}</arg>
+</arguments>
+<msg timestamp="20200423 00:16:30.257" level="INFO">Clicking element 'xpath=(//div[@title="Vicco Turmeric Skin Cream"]/following-sibling::div[4]/div/button[@class='btn btn-primary mr-1'])[1]'.</msg>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200422 01:38:16.365" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200422 01:38:14.928" endtime="20200422 01:38:16.366"></status>
+<msg timestamp="20200423 00:16:31.722" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200423 00:16:30.777" endtime="20200423 00:16:31.723"></status>
 </kw>
-<msg timestamp="20200422 01:38:16.390" level="FAIL">Element 'xpath=//div[@title="Dabur Sitopaladi Churna"]' did not appear in 5 seconds.</msg>
-<status status="FAIL" starttime="20200422 01:38:08.813" endtime="20200422 01:38:16.390"></status>
+<msg timestamp="20200423 00:16:31.724" level="FAIL">Element with locator 'xpath=(//div[@title="Vicco Turmeric Skin Cream"]/following-sibling::div[4]/div/button[@class='btn btn-primary mr-1'])[1]' not found.</msg>
+<status status="FAIL" starttime="20200423 00:16:30.257" endtime="20200423 00:16:31.724"></status>
 </kw>
-<status status="FAIL" starttime="20200422 01:38:08.812" endtime="20200422 01:38:16.391"></status>
+<status status="FAIL" starttime="20200423 00:16:29.736" endtime="20200423 00:16:31.725"></status>
 </kw>
+<status status="FAIL" starttime="20200423 00:16:27.329" endtime="20200423 00:16:31.725" critical="yes">Element with locator 'xpath=(//div[@title="Vicco Turmeric Skin Cream"]/following-sibling::div[4]/div/button[@class='btn btn-primary mr-1'])[1]' not found.</status>
+</test>
 <kw name="Close Browser" library="SeleniumLibrary" type="teardown">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20200422 01:38:16.392" endtime="20200422 01:38:17.451"></status>
+<status status="PASS" starttime="20200423 00:16:31.726" endtime="20200423 00:16:32.282"></status>
 </kw>
-<status status="FAIL" starttime="20200422 01:37:32.556" endtime="20200422 01:38:17.452" critical="yes">Element 'xpath=//div[@title="Dabur Sitopaladi Churna"]' did not appear in 5 seconds.</status>
-</test>
-<status status="FAIL" starttime="20200422 01:37:29.821" endtime="20200422 01:38:17.453"></status>
+<status status="FAIL" starttime="20200423 00:16:06.916" endtime="20200423 00:16:32.282"></status>
 </suite>
 <suite id="s1-s2" name="UploadPrescriptionFlow" source="/home/deadpool/PycharmProjects/1Tab_Automation/1Tab_WebApp/Testcases/UploadPrescriptionFlow.robot">
-<test id="s1-s2-t1" name="Verify upload prescription flow is working">
-<kw name="Website is up and running" library="Keywords" type="setup">
+<kw name="Website is up and running" library="Common" type="setup">
 <kw name="Open Browser" library="SeleniumLibrary">
 <doc>Opens a new browser instance to the optional ``url``.</doc>
 <arguments>
-<arg>https://prod.1tab.com/</arg>
-<arg>Chrome</arg>
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
 </arguments>
-<msg timestamp="20200422 01:38:17.479" level="INFO">Opening browser 'Chrome' to base url 'https://prod.1tab.com/'.</msg>
-<status status="PASS" starttime="20200422 01:38:17.478" endtime="20200422 01:38:34.116"></status>
+<msg timestamp="20200423 00:16:32.298" level="INFO">Opening browser 'Chrome' to base url 'https://prod.1tab.com/'.</msg>
+<status status="PASS" starttime="20200423 00:16:32.298" endtime="20200423 00:16:48.808"></status>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20200422 01:38:34.117" endtime="20200422 01:38:35.446"></status>
+<status status="PASS" starttime="20200423 00:16:48.809" endtime="20200423 00:16:49.621"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>3s</arg>
 </arguments>
-<msg timestamp="20200422 01:38:38.446" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20200422 01:38:35.446" endtime="20200422 01:38:38.447"></status>
+<msg timestamp="20200423 00:16:52.622" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20200423 00:16:49.621" endtime="20200423 00:16:52.622"></status>
 </kw>
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
 <arguments>
 <arg>${company_Info}</arg>
 </arguments>
-<status status="PASS" starttime="20200422 01:38:38.448" endtime="20200422 01:38:39.503"></status>
+<status status="PASS" starttime="20200423 00:16:52.623" endtime="20200423 00:16:53.142"></status>
 </kw>
-<status status="PASS" starttime="20200422 01:38:17.478" endtime="20200422 01:38:39.503"></status>
+<status status="PASS" starttime="20200423 00:16:32.297" endtime="20200423 00:16:53.143"></status>
 </kw>
-<kw name="User logs in to the website" library="Keywords">
+<test id="s1-s2-t1" name="Verify upload prescription flow is working">
+<kw name="User logs in to the website" library="Login_Signup">
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>${signIn_Link}</arg>
 </arguments>
-<msg timestamp="20200422 01:38:39.506" level="INFO">Clicking element 'xpath=(//div[@class="p-1 tab_options_btns ng-tns-c8-0 ng-star-inserted"])[1]'.</msg>
-<status status="PASS" starttime="20200422 01:38:39.505" endtime="20200422 01:38:41.922"></status>
+<msg timestamp="20200423 00:16:53.147" level="INFO">Clicking element 'xpath=(//div[@class="p-1 tab_options_btns ng-tns-c8-0 ng-star-inserted"])[1]'.</msg>
+<status status="PASS" starttime="20200423 00:16:53.147" endtime="20200423 00:16:54.610"></status>
 </kw>
 <kw name="Get Row Count" library="ExcelOperations">
 <arguments>
@@ -349,8 +357,8 @@
 <assign>
 <var>${max_rows}</var>
 </assign>
-<msg timestamp="20200422 01:38:41.931" level="INFO">${max_rows} = 3</msg>
-<status status="PASS" starttime="20200422 01:38:41.923" endtime="20200422 01:38:41.931"></status>
+<msg timestamp="20200423 00:16:54.637" level="INFO">${max_rows} = 3</msg>
+<status status="PASS" starttime="20200423 00:16:54.611" endtime="20200423 00:16:54.638"></status>
 </kw>
 <kw name="Get Column Count" library="ExcelOperations">
 <arguments>
@@ -360,8 +368,8 @@
 <assign>
 <var>${max_cols}</var>
 </assign>
-<msg timestamp="20200422 01:38:41.934" level="INFO">${max_cols} = 4</msg>
-<status status="PASS" starttime="20200422 01:38:41.931" endtime="20200422 01:38:41.934"></status>
+<msg timestamp="20200423 00:16:54.648" level="INFO">${max_cols} = 4</msg>
+<status status="PASS" starttime="20200423 00:16:54.638" endtime="20200423 00:16:54.648"></status>
 </kw>
 <kw name="${row_num} IN RANGE [ 0 | ${max_rows} ]" type="for">
 <kw name="${row_num} = 0" type="foritem">
@@ -375,8 +383,8 @@
 <assign>
 <var>${user_Username}</var>
 </assign>
-<msg timestamp="20200422 01:38:41.938" level="INFO">${user_Username} = abc@xyz</msg>
-<status status="PASS" starttime="20200422 01:38:41.935" endtime="20200422 01:38:41.938"></status>
+<msg timestamp="20200423 00:16:54.657" level="INFO">${user_Username} = abc@xyz</msg>
+<status status="PASS" starttime="20200423 00:16:54.649" endtime="20200423 00:16:54.658"></status>
 </kw>
 <kw name="Read Data From Excel" library="ExcelOperations">
 <arguments>
@@ -388,8 +396,8 @@
 <assign>
 <var>${user_Password}</var>
 </assign>
-<msg timestamp="20200422 01:38:41.942" level="INFO">${user_Password} = Anuvrat@1</msg>
-<status status="PASS" starttime="20200422 01:38:41.939" endtime="20200422 01:38:41.942"></status>
+<msg timestamp="20200423 00:16:54.663" level="INFO">${user_Password} = Anuvrat@1</msg>
+<status status="PASS" starttime="20200423 00:16:54.658" endtime="20200423 00:16:54.663"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -398,8 +406,8 @@
 <arg>${user_Username}</arg>
 <arg>clear=True</arg>
 </arguments>
-<msg timestamp="20200422 01:38:41.942" level="INFO">Typing text 'abc@xyz' into text field 'xpath=//input[@id="user_input"]'.</msg>
-<status status="PASS" starttime="20200422 01:38:41.942" endtime="20200422 01:38:45.258"></status>
+<msg timestamp="20200423 00:16:54.664" level="INFO">Typing text 'abc@xyz' into text field 'xpath=//input[@id="user_input"]'.</msg>
+<status status="PASS" starttime="20200423 00:16:54.664" endtime="20200423 00:16:56.594"></status>
 </kw>
 <kw name="Input Password" library="SeleniumLibrary">
 <doc>Types the given password into the text field identified by ``locator``.</doc>
@@ -408,27 +416,27 @@
 <arg>${user_Password}</arg>
 <arg>clear=True</arg>
 </arguments>
-<msg timestamp="20200422 01:38:45.260" level="INFO">Typing password into text field 'xpath=//input[@id="password"]'.</msg>
-<msg timestamp="20200422 01:38:47.375" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20200422 01:38:48.558" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20200422 01:38:45.259" endtime="20200422 01:38:48.559"></status>
+<msg timestamp="20200423 00:16:56.596" level="INFO">Typing password into text field 'xpath=//input[@id="password"]'.</msg>
+<msg timestamp="20200423 00:16:57.772" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20200423 00:16:58.482" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20200423 00:16:56.595" endtime="20200423 00:16:58.482"></status>
 </kw>
 <kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
 <doc>Waits until the element ``locator`` is enabled.</doc>
 <arguments>
 <arg>${submit_Button}</arg>
 </arguments>
-<status status="PASS" starttime="20200422 01:38:48.559" endtime="20200422 01:38:51.670"></status>
+<status status="PASS" starttime="20200423 00:16:58.483" endtime="20200423 00:17:00.077"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks the button identified by ``locator``.</doc>
 <arguments>
 <arg>${submit_Button}</arg>
 </arguments>
-<msg timestamp="20200422 01:38:51.671" level="INFO">Clicking button 'xpath=//button[@class="btn btn-success tab_yellowbtn w-100"]'.</msg>
-<status status="PASS" starttime="20200422 01:38:51.670" endtime="20200422 01:38:56.825"></status>
+<msg timestamp="20200423 00:17:00.078" level="INFO">Clicking button 'xpath=//button[@class="btn btn-success tab_yellowbtn w-100"]'.</msg>
+<status status="PASS" starttime="20200423 00:17:00.078" endtime="20200423 00:17:02.792"></status>
 </kw>
-<status status="PASS" starttime="20200422 01:38:41.935" endtime="20200422 01:38:56.825"></status>
+<status status="PASS" starttime="20200423 00:16:54.649" endtime="20200423 00:17:02.792"></status>
 </kw>
 <kw name="${row_num} = 1" type="foritem">
 <kw name="Read Data From Excel" library="ExcelOperations">
@@ -441,8 +449,8 @@
 <assign>
 <var>${user_Username}</var>
 </assign>
-<msg timestamp="20200422 01:38:56.839" level="INFO">${user_Username} = s.anuvrat@1tab.com</msg>
-<status status="PASS" starttime="20200422 01:38:56.826" endtime="20200422 01:38:56.839"></status>
+<msg timestamp="20200423 00:17:02.803" level="INFO">${user_Username} = s.anuvrat@1tab.com</msg>
+<status status="PASS" starttime="20200423 00:17:02.793" endtime="20200423 00:17:02.803"></status>
 </kw>
 <kw name="Read Data From Excel" library="ExcelOperations">
 <arguments>
@@ -454,8 +462,8 @@
 <assign>
 <var>${user_Password}</var>
 </assign>
-<msg timestamp="20200422 01:38:56.851" level="INFO">${user_Password} = Anuvrat@2</msg>
-<status status="PASS" starttime="20200422 01:38:56.839" endtime="20200422 01:38:56.851"></status>
+<msg timestamp="20200423 00:17:02.810" level="INFO">${user_Password} = Anuvrat@2</msg>
+<status status="PASS" starttime="20200423 00:17:02.804" endtime="20200423 00:17:02.810"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -464,8 +472,8 @@
 <arg>${user_Username}</arg>
 <arg>clear=True</arg>
 </arguments>
-<msg timestamp="20200422 01:38:56.852" level="INFO">Typing text 's.anuvrat@1tab.com' into text field 'xpath=//input[@id="user_input"]'.</msg>
-<status status="PASS" starttime="20200422 01:38:56.852" endtime="20200422 01:39:00.285"></status>
+<msg timestamp="20200423 00:17:02.810" level="INFO">Typing text 's.anuvrat@1tab.com' into text field 'xpath=//input[@id="user_input"]'.</msg>
+<status status="PASS" starttime="20200423 00:17:02.810" endtime="20200423 00:17:04.791"></status>
 </kw>
 <kw name="Input Password" library="SeleniumLibrary">
 <doc>Types the given password into the text field identified by ``locator``.</doc>
@@ -474,27 +482,27 @@
 <arg>${user_Password}</arg>
 <arg>clear=True</arg>
 </arguments>
-<msg timestamp="20200422 01:39:00.286" level="INFO">Typing password into text field 'xpath=//input[@id="password"]'.</msg>
-<msg timestamp="20200422 01:39:02.475" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20200422 01:39:03.651" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20200422 01:39:00.285" endtime="20200422 01:39:03.652"></status>
+<msg timestamp="20200423 00:17:04.792" level="INFO">Typing password into text field 'xpath=//input[@id="password"]'.</msg>
+<msg timestamp="20200423 00:17:05.968" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20200423 00:17:06.725" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20200423 00:17:04.792" endtime="20200423 00:17:06.726"></status>
 </kw>
 <kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
 <doc>Waits until the element ``locator`` is enabled.</doc>
 <arguments>
 <arg>${submit_Button}</arg>
 </arguments>
-<status status="PASS" starttime="20200422 01:39:03.652" endtime="20200422 01:39:06.727"></status>
+<status status="PASS" starttime="20200423 00:17:06.727" endtime="20200423 00:17:08.303"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks the button identified by ``locator``.</doc>
 <arguments>
 <arg>${submit_Button}</arg>
 </arguments>
-<msg timestamp="20200422 01:39:06.727" level="INFO">Clicking button 'xpath=//button[@class="btn btn-success tab_yellowbtn w-100"]'.</msg>
-<status status="PASS" starttime="20200422 01:39:06.727" endtime="20200422 01:39:11.897"></status>
+<msg timestamp="20200423 00:17:08.304" level="INFO">Clicking button 'xpath=//button[@class="btn btn-success tab_yellowbtn w-100"]'.</msg>
+<status status="PASS" starttime="20200423 00:17:08.304" endtime="20200423 00:17:11.002"></status>
 </kw>
-<status status="PASS" starttime="20200422 01:38:56.826" endtime="20200422 01:39:11.897"></status>
+<status status="PASS" starttime="20200423 00:17:02.792" endtime="20200423 00:17:11.002"></status>
 </kw>
 <kw name="${row_num} = 2" type="foritem">
 <kw name="Read Data From Excel" library="ExcelOperations">
@@ -507,8 +515,8 @@
 <assign>
 <var>${user_Username}</var>
 </assign>
-<msg timestamp="20200422 01:39:11.902" level="INFO">${user_Username} = 9899958909</msg>
-<status status="PASS" starttime="20200422 01:39:11.898" endtime="20200422 01:39:11.902"></status>
+<msg timestamp="20200423 00:17:11.017" level="INFO">${user_Username} = 9899958909</msg>
+<status status="PASS" starttime="20200423 00:17:11.003" endtime="20200423 00:17:11.017"></status>
 </kw>
 <kw name="Read Data From Excel" library="ExcelOperations">
 <arguments>
@@ -520,8 +528,8 @@
 <assign>
 <var>${user_Password}</var>
 </assign>
-<msg timestamp="20200422 01:39:11.907" level="INFO">${user_Password} = Anuvrat@1</msg>
-<status status="PASS" starttime="20200422 01:39:11.902" endtime="20200422 01:39:11.907"></status>
+<msg timestamp="20200423 00:17:11.030" level="INFO">${user_Password} = Anuvrat@1</msg>
+<status status="PASS" starttime="20200423 00:17:11.018" endtime="20200423 00:17:11.030"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -530,8 +538,8 @@
 <arg>${user_Username}</arg>
 <arg>clear=True</arg>
 </arguments>
-<msg timestamp="20200422 01:39:11.908" level="INFO">Typing text '9899958909' into text field 'xpath=//input[@id="user_input"]'.</msg>
-<status status="PASS" starttime="20200422 01:39:11.907" endtime="20200422 01:39:15.174"></status>
+<msg timestamp="20200423 00:17:11.031" level="INFO">Typing text '9899958909' into text field 'xpath=//input[@id="user_input"]'.</msg>
+<status status="PASS" starttime="20200423 00:17:11.030" endtime="20200423 00:17:12.829"></status>
 </kw>
 <kw name="Input Password" library="SeleniumLibrary">
 <doc>Types the given password into the text field identified by ``locator``.</doc>
@@ -540,47 +548,47 @@
 <arg>${user_Password}</arg>
 <arg>clear=True</arg>
 </arguments>
-<msg timestamp="20200422 01:39:15.174" level="INFO">Typing password into text field 'xpath=//input[@id="password"]'.</msg>
-<msg timestamp="20200422 01:39:17.256" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20200422 01:39:18.349" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20200422 01:39:15.174" endtime="20200422 01:39:18.349"></status>
+<msg timestamp="20200423 00:17:12.830" level="INFO">Typing password into text field 'xpath=//input[@id="password"]'.</msg>
+<msg timestamp="20200423 00:17:13.943" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20200423 00:17:14.899" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20200423 00:17:12.830" endtime="20200423 00:17:14.900"></status>
 </kw>
 <kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
 <doc>Waits until the element ``locator`` is enabled.</doc>
 <arguments>
 <arg>${submit_Button}</arg>
 </arguments>
-<status status="PASS" starttime="20200422 01:39:18.350" endtime="20200422 01:39:21.405"></status>
+<status status="PASS" starttime="20200423 00:17:14.901" endtime="20200423 00:17:16.476"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks the button identified by ``locator``.</doc>
 <arguments>
 <arg>${submit_Button}</arg>
 </arguments>
-<msg timestamp="20200422 01:39:21.406" level="INFO">Clicking button 'xpath=//button[@class="btn btn-success tab_yellowbtn w-100"]'.</msg>
-<status status="PASS" starttime="20200422 01:39:21.405" endtime="20200422 01:39:26.578"></status>
+<msg timestamp="20200423 00:17:16.477" level="INFO">Clicking button 'xpath=//button[@class="btn btn-success tab_yellowbtn w-100"]'.</msg>
+<status status="PASS" starttime="20200423 00:17:16.477" endtime="20200423 00:17:19.227"></status>
 </kw>
-<status status="PASS" starttime="20200422 01:39:11.897" endtime="20200422 01:39:26.578"></status>
+<status status="PASS" starttime="20200423 00:17:11.003" endtime="20200423 00:17:19.227"></status>
 </kw>
-<status status="PASS" starttime="20200422 01:38:41.935" endtime="20200422 01:39:26.578"></status>
+<status status="PASS" starttime="20200423 00:16:54.648" endtime="20200423 00:17:19.227"></status>
 </kw>
-<status status="PASS" starttime="20200422 01:38:39.504" endtime="20200422 01:39:26.578"></status>
+<status status="PASS" starttime="20200423 00:16:53.146" endtime="20200423 00:17:19.227"></status>
 </kw>
-<kw name="Place Order Via Upload Prescription Flow" library="Keywords">
+<kw name="Place Order Via Upload Prescription Flow" library="Upload_Prescription">
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>${uploadPrescriptionHeader_Button}</arg>
 </arguments>
-<msg timestamp="20200422 01:39:26.579" level="INFO">Clicking element 'xpath=//button[@class="btn tab_btn_default m-auto"]'.</msg>
-<status status="PASS" starttime="20200422 01:39:26.579" endtime="20200422 01:39:28.873"></status>
+<msg timestamp="20200423 00:17:19.228" level="INFO">Clicking element 'xpath=//button[@class="btn tab_btn_default m-auto"]'.</msg>
+<status status="PASS" starttime="20200423 00:17:19.228" endtime="20200423 00:17:20.545"></status>
 </kw>
 <kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
 <doc>Waits until the element ``locator`` is enabled.</doc>
 <arguments>
 <arg>${fileUpload_Button}</arg>
 </arguments>
-<status status="PASS" starttime="20200422 01:39:28.874" endtime="20200422 01:39:31.925"></status>
+<status status="PASS" starttime="20200423 00:17:20.546" endtime="20200423 00:17:22.174"></status>
 </kw>
 <kw name="Choose File" library="SeleniumLibrary">
 <doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
@@ -588,8 +596,8 @@
 <arg>${fileUpload_Button}</arg>
 <arg>${prescriptionPDF_Path}</arg>
 </arguments>
-<msg timestamp="20200422 01:39:31.926" level="INFO">Sending /home/deadpool/PycharmProjects/1Tab_Automation/1Tab_WebApp/Prescription2.pdf to browser.</msg>
-<status status="PASS" starttime="20200422 01:39:31.925" endtime="20200422 01:39:34.052"></status>
+<msg timestamp="20200423 00:17:22.176" level="INFO">Sending /home/deadpool/PycharmProjects/1Tab_Automation/1Tab_WebApp/Prescription2.pdf to browser.</msg>
+<status status="PASS" starttime="20200423 00:17:22.174" endtime="20200423 00:17:23.297"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -597,63 +605,62 @@
 <arg>${userNotes_Textarea}</arg>
 <arg>This is a sample input text</arg>
 </arguments>
-<msg timestamp="20200422 01:39:34.053" level="INFO">Typing text 'This is a sample input text' into text field 'xpath=//textarea[@name="user_notes"]'.</msg>
-<status status="PASS" starttime="20200422 01:39:34.052" endtime="20200422 01:39:37.449"></status>
+<msg timestamp="20200423 00:17:23.299" level="INFO">Typing text 'This is a sample input text' into text field 'xpath=//textarea[@name="user_notes"]'.</msg>
+<status status="PASS" starttime="20200423 00:17:23.298" endtime="20200423 00:17:25.156"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>${next_Button}</arg>
 </arguments>
-<msg timestamp="20200422 01:39:37.451" level="INFO">Clicking element 'xpath=//button[@class="btn tab_btn_default w-50"]'.</msg>
-<status status="PASS" starttime="20200422 01:39:37.450" endtime="20200422 01:39:39.619"></status>
+<msg timestamp="20200423 00:17:25.157" level="INFO">Clicking element 'xpath=//button[@class="btn tab_btn_default w-50"]'.</msg>
+<status status="PASS" starttime="20200423 00:17:25.156" endtime="20200423 00:17:26.329"></status>
 </kw>
 <kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
 <doc>Waits until the element ``locator`` is enabled.</doc>
 <arguments>
 <arg>${firstOption_Label}</arg>
 </arguments>
-<status status="PASS" starttime="20200422 01:39:39.620" endtime="20200422 01:39:42.685"></status>
+<status status="PASS" starttime="20200423 00:17:26.330" endtime="20200423 00:17:27.931"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>${firstOption_Label}</arg>
 </arguments>
-<msg timestamp="20200422 01:39:42.686" level="INFO">Clicking element 'xpath=(//label[@class="tab_checkbox"])[1]'.</msg>
-<status status="PASS" starttime="20200422 01:39:42.685" endtime="20200422 01:39:44.797"></status>
+<msg timestamp="20200423 00:17:27.933" level="INFO">Clicking element 'xpath=(//label[@class="tab_checkbox"])[1]'.</msg>
+<status status="PASS" starttime="20200423 00:17:27.932" endtime="20200423 00:17:29.037"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>${confirm_Button}</arg>
 </arguments>
-<msg timestamp="20200422 01:39:44.799" level="INFO">Clicking element 'xpath=//button[@class="btn tab_btn_default w-100"]'.</msg>
-<status status="PASS" starttime="20200422 01:39:44.798" endtime="20200422 01:39:46.945"></status>
+<msg timestamp="20200423 00:17:29.039" level="INFO">Clicking element 'xpath=//button[@class="btn tab_btn_default w-100"]'.</msg>
+<status status="PASS" starttime="20200423 00:17:29.038" endtime="20200423 00:17:30.175"></status>
 </kw>
-<kw name="User adds a new address via upload prescription" library="Keywords">
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
+<kw name="User adds a new address via upload prescription" library="Upload_Prescription">
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<doc>Sets the implicit wait value used by Selenium.</doc>
 <arguments>
-<arg>3s</arg>
+<arg>10 seconds</arg>
 </arguments>
-<msg timestamp="20200422 01:39:49.948" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20200422 01:39:46.947" endtime="20200422 01:39:49.948"></status>
+<status status="PASS" starttime="20200423 00:17:30.177" endtime="20200423 00:17:30.683"></status>
 </kw>
 <kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
 <doc>Waits until the element ``locator`` is enabled.</doc>
 <arguments>
 <arg>${UP_addNewAddress_Button}</arg>
 </arguments>
-<status status="PASS" starttime="20200422 01:39:49.949" endtime="20200422 01:39:53.010"></status>
+<status status="PASS" starttime="20200423 00:17:30.683" endtime="20200423 00:17:32.282"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>${UP_addNewAddress_Button}</arg>
 </arguments>
-<msg timestamp="20200422 01:39:53.012" level="INFO">Clicking element 'xpath=//button[contains(text(),"Add New Address")]'.</msg>
-<status status="PASS" starttime="20200422 01:39:53.011" endtime="20200422 01:39:55.096"></status>
+<msg timestamp="20200423 00:17:32.283" level="INFO">Clicking element 'xpath=//button[contains(text(),"Add New Address")]'.</msg>
+<status status="PASS" starttime="20200423 00:17:32.282" endtime="20200423 00:17:33.374"></status>
 </kw>
 <kw name="Get Row Count" library="ExcelOperations">
 <arguments>
@@ -663,8 +670,8 @@
 <assign>
 <var>${max_rows}</var>
 </assign>
-<msg timestamp="20200422 01:39:55.104" level="INFO">${max_rows} = 5</msg>
-<status status="PASS" starttime="20200422 01:39:55.097" endtime="20200422 01:39:55.104"></status>
+<msg timestamp="20200423 00:17:33.396" level="INFO">${max_rows} = 5</msg>
+<status status="PASS" starttime="20200423 00:17:33.375" endtime="20200423 00:17:33.397"></status>
 </kw>
 <kw name="Get Column Count" library="ExcelOperations">
 <arguments>
@@ -674,8 +681,8 @@
 <assign>
 <var>${max_cols}</var>
 </assign>
-<msg timestamp="20200422 01:39:55.109" level="INFO">${max_cols} = 8</msg>
-<status status="PASS" starttime="20200422 01:39:55.105" endtime="20200422 01:39:55.109"></status>
+<msg timestamp="20200423 00:17:33.417" level="INFO">${max_cols} = 8</msg>
+<status status="PASS" starttime="20200423 00:17:33.397" endtime="20200423 00:17:33.417"></status>
 </kw>
 <kw name="${row_num} IN RANGE [ 0 | ${max_rows} ]" type="for">
 <kw name="${row_num} = 0" type="foritem">
@@ -689,8 +696,8 @@
 <assign>
 <var>${UP_name}</var>
 </assign>
-<msg timestamp="20200422 01:39:55.114" level="INFO">${UP_name} = Anuvrat Singh</msg>
-<status status="PASS" starttime="20200422 01:39:55.109" endtime="20200422 01:39:55.114"></status>
+<msg timestamp="20200423 00:17:33.434" level="INFO">${UP_name} = Anuvrat Singh</msg>
+<status status="PASS" starttime="20200423 00:17:33.419" endtime="20200423 00:17:33.434"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -699,8 +706,8 @@
 <arg>${UP_name}</arg>
 <arg>clear = True</arg>
 </arguments>
-<msg timestamp="20200422 01:39:55.114" level="INFO">Typing text 'Anuvrat Singh' into text field 'xpath=//input[@id="name"]'.</msg>
-<status status="PASS" starttime="20200422 01:39:55.114" endtime="20200422 01:39:58.339"></status>
+<msg timestamp="20200423 00:17:33.436" level="INFO">Typing text 'Anuvrat Singh' into text field 'xpath=//input[@id="name"]'.</msg>
+<status status="PASS" starttime="20200423 00:17:33.435" endtime="20200423 00:17:35.328"></status>
 </kw>
 <kw name="Read Data From Excel" library="ExcelOperations">
 <arguments>
@@ -712,8 +719,8 @@
 <assign>
 <var>${UP_mobile}</var>
 </assign>
-<msg timestamp="20200422 01:39:58.357" level="INFO">${UP_mobile} = 6666666666</msg>
-<status status="PASS" starttime="20200422 01:39:58.340" endtime="20200422 01:39:58.357"></status>
+<msg timestamp="20200423 00:17:35.351" level="INFO">${UP_mobile} = 6666666666</msg>
+<status status="PASS" starttime="20200423 00:17:35.328" endtime="20200423 00:17:35.351"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -722,8 +729,8 @@
 <arg>${UP_mobile}</arg>
 <arg>clear=True</arg>
 </arguments>
-<msg timestamp="20200422 01:39:58.358" level="INFO">Typing text '6666666666' into text field 'xpath=//input[@id="mobile"]'.</msg>
-<status status="PASS" starttime="20200422 01:39:58.357" endtime="20200422 01:40:01.610"></status>
+<msg timestamp="20200423 00:17:35.354" level="INFO">Typing text '6666666666' into text field 'xpath=//input[@id="mobile"]'.</msg>
+<status status="PASS" starttime="20200423 00:17:35.352" endtime="20200423 00:17:37.325"></status>
 </kw>
 <kw name="Read Data From Excel" library="ExcelOperations">
 <arguments>
@@ -735,8 +742,8 @@
 <assign>
 <var>${UP_address1}</var>
 </assign>
-<msg timestamp="20200422 01:40:01.627" level="INFO">${UP_address1} = F-3 Plot No. 70 Sec-5 Rajender Nagar</msg>
-<status status="PASS" starttime="20200422 01:40:01.611" endtime="20200422 01:40:01.627"></status>
+<msg timestamp="20200423 00:17:37.344" level="INFO">${UP_address1} = F-3 Plot No. 70 Sec-5 Rajender Nagar</msg>
+<status status="PASS" starttime="20200423 00:17:37.325" endtime="20200423 00:17:37.344"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -745,8 +752,8 @@
 <arg>${UP_address1}</arg>
 <arg>clear=True</arg>
 </arguments>
-<msg timestamp="20200422 01:40:01.629" level="INFO">Typing text 'F-3 Plot No. 70 Sec-5 Rajender Nagar' into text field 'xpath=//input[@id="address1"]'.</msg>
-<status status="PASS" starttime="20200422 01:40:01.628" endtime="20200422 01:40:04.942"></status>
+<msg timestamp="20200423 00:17:37.346" level="INFO">Typing text 'F-3 Plot No. 70 Sec-5 Rajender Nagar' into text field 'xpath=//input[@id="address1"]'.</msg>
+<status status="PASS" starttime="20200423 00:17:37.345" endtime="20200423 00:17:39.286"></status>
 </kw>
 <kw name="Read Data From Excel" library="ExcelOperations">
 <arguments>
@@ -758,8 +765,8 @@
 <assign>
 <var>${UP_address2}</var>
 </assign>
-<msg timestamp="20200422 01:40:04.951" level="INFO">${UP_address2} = Sahibabad</msg>
-<status status="PASS" starttime="20200422 01:40:04.943" endtime="20200422 01:40:04.951"></status>
+<msg timestamp="20200423 00:17:39.302" level="INFO">${UP_address2} = Sahibabad</msg>
+<status status="PASS" starttime="20200423 00:17:39.287" endtime="20200423 00:17:39.302"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -768,8 +775,8 @@
 <arg>${UP_address2}</arg>
 <arg>clear=True</arg>
 </arguments>
-<msg timestamp="20200422 01:40:04.951" level="INFO">Typing text 'Sahibabad' into text field 'xpath=//input[@id="address2"]'.</msg>
-<status status="PASS" starttime="20200422 01:40:04.951" endtime="20200422 01:40:08.160"></status>
+<msg timestamp="20200423 00:17:39.303" level="INFO">Typing text 'Sahibabad' into text field 'xpath=//input[@id="address2"]'.</msg>
+<status status="PASS" starttime="20200423 00:17:39.302" endtime="20200423 00:17:41.012"></status>
 </kw>
 <kw name="Read Data From Excel" library="ExcelOperations">
 <arguments>
@@ -781,8 +788,8 @@
 <assign>
 <var>${UP_landmark}</var>
 </assign>
-<msg timestamp="20200422 01:40:08.168" level="INFO">${UP_landmark} = M4U cinema</msg>
-<status status="PASS" starttime="20200422 01:40:08.161" endtime="20200422 01:40:08.168"></status>
+<msg timestamp="20200423 00:17:41.031" level="INFO">${UP_landmark} = M4U cinema</msg>
+<status status="PASS" starttime="20200423 00:17:41.013" endtime="20200423 00:17:41.031"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -791,8 +798,8 @@
 <arg>${UP_landmark}</arg>
 <arg>clear=True</arg>
 </arguments>
-<msg timestamp="20200422 01:40:08.169" level="INFO">Typing text 'M4U cinema' into text field 'xpath=//input[@id="landmark"]'.</msg>
-<status status="PASS" starttime="20200422 01:40:08.169" endtime="20200422 01:40:11.400"></status>
+<msg timestamp="20200423 00:17:41.032" level="INFO">Typing text 'M4U cinema' into text field 'xpath=//input[@id="landmark"]'.</msg>
+<status status="PASS" starttime="20200423 00:17:41.032" endtime="20200423 00:17:42.864"></status>
 </kw>
 <kw name="Read Data From Excel" library="ExcelOperations">
 <arguments>
@@ -804,8 +811,8 @@
 <assign>
 <var>${UP_city}</var>
 </assign>
-<msg timestamp="20200422 01:40:11.418" level="INFO">${UP_city} = Rajasthan</msg>
-<status status="PASS" starttime="20200422 01:40:11.401" endtime="20200422 01:40:11.418"></status>
+<msg timestamp="20200423 00:17:42.881" level="INFO">${UP_city} = Rajasthan</msg>
+<status status="PASS" starttime="20200423 00:17:42.865" endtime="20200423 00:17:42.881"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -814,54 +821,1040 @@
 <arg>${UP_city}</arg>
 <arg>clear=True</arg>
 </arguments>
-<msg timestamp="20200422 01:40:11.419" level="INFO">Typing text 'Rajasthan' into text field 'xpath=//input[@id="city"]'.</msg>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200422 01:40:12.704" level="FAIL">WebDriverException: Message: chrome not reachable
-  (Session info: chrome=80.0.3987.162)
-</msg>
-<status status="FAIL" starttime="20200422 01:40:12.463" endtime="20200422 01:40:12.704"></status>
+<msg timestamp="20200423 00:17:42.883" level="INFO">Typing text 'Rajasthan' into text field 'xpath=//input[@id="city"]'.</msg>
+<status status="PASS" starttime="20200423 00:17:42.881" endtime="20200423 00:17:44.787"></status>
 </kw>
-<msg timestamp="20200422 01:40:12.704" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
-  (Session info: chrome=80.0.3987.162)
-</msg>
-<msg timestamp="20200422 01:40:12.870" level="FAIL">Element with locator 'xpath=//input[@id="city"]' not found.</msg>
-<status status="FAIL" starttime="20200422 01:40:11.418" endtime="20200422 01:40:12.870"></status>
+<kw name="Read Data From Excel" library="ExcelOperations">
+<arguments>
+<arg>${testData_Path}</arg>
+<arg>Address</arg>
+<arg>${row_num}</arg>
+<arg>${6}</arg>
+</arguments>
+<assign>
+<var>${UP_state}</var>
+</assign>
+<msg timestamp="20200423 00:17:44.818" level="INFO">${UP_state} = Uttar Pradesh</msg>
+<status status="PASS" starttime="20200423 00:17:44.788" endtime="20200423 00:17:44.818"></status>
 </kw>
-<status status="FAIL" starttime="20200422 01:39:55.109" endtime="20200422 01:40:12.870"></status>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${UP_customer_State}</arg>
+<arg>${UP_state}</arg>
+<arg>clear=True</arg>
+</arguments>
+<msg timestamp="20200423 00:17:44.820" level="INFO">Typing text 'Uttar Pradesh' into text field 'xpath=//input[@id="state"]'.</msg>
+<status status="PASS" starttime="20200423 00:17:44.819" endtime="20200423 00:17:46.727"></status>
 </kw>
-<status status="FAIL" starttime="20200422 01:39:55.109" endtime="20200422 01:40:12.870"></status>
+<kw name="Read Data From Excel" library="ExcelOperations">
+<arguments>
+<arg>${testData_Path}</arg>
+<arg>Address</arg>
+<arg>${row_num}</arg>
+<arg>${7}</arg>
+</arguments>
+<assign>
+<var>${UP_pincode}</var>
+</assign>
+<msg timestamp="20200423 00:17:46.745" level="INFO">${UP_pincode} = 876787</msg>
+<status status="PASS" starttime="20200423 00:17:46.728" endtime="20200423 00:17:46.745"></status>
 </kw>
-<status status="FAIL" starttime="20200422 01:39:46.946" endtime="20200422 01:40:12.871"></status>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${UP_pincode}</arg>
+</arguments>
+<assign>
+<var>${UP_pincode}</var>
+</assign>
+<msg timestamp="20200423 00:17:46.747" level="INFO">${UP_pincode} = 876787</msg>
+<status status="PASS" starttime="20200423 00:17:46.745" endtime="20200423 00:17:46.747"></status>
 </kw>
-<status status="FAIL" starttime="20200422 01:39:26.578" endtime="20200422 01:40:12.871"></status>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${UP_customer_Pincode}</arg>
+<arg>${UP_pincode}</arg>
+<arg>clear=True</arg>
+</arguments>
+<msg timestamp="20200423 00:17:46.749" level="INFO">Typing text '876787' into text field 'xpath=//input[@id="pincode"]'.</msg>
+<status status="PASS" starttime="20200423 00:17:46.748" endtime="20200423 00:17:48.601"></status>
 </kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${UP_address_Selector_Office}</arg>
+</arguments>
+<msg timestamp="20200423 00:17:48.603" level="INFO">Clicking element 'xpath=//b[text()="Office"]'.</msg>
+<status status="PASS" starttime="20200423 00:17:48.602" endtime="20200423 00:17:49.740"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${UP_save_Address_Button}</arg>
+</arguments>
+<status status="PASS" starttime="20200423 00:17:49.741" endtime="20200423 00:17:51.316"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${UP_save_Address_Button}</arg>
+</arguments>
+<msg timestamp="20200423 00:17:51.317" level="INFO">Clicking button 'xpath=(//button[@class="btn tab_btn_default w-25"])[1]'.</msg>
+<status status="PASS" starttime="20200423 00:17:51.316" endtime="20200423 00:17:53.990"></status>
+</kw>
+<status status="PASS" starttime="20200423 00:17:33.419" endtime="20200423 00:17:53.991"></status>
+</kw>
+<kw name="${row_num} = 1" type="foritem">
+<kw name="Read Data From Excel" library="ExcelOperations">
+<arguments>
+<arg>${testData_Path}</arg>
+<arg>Address</arg>
+<arg>${row_num}</arg>
+<arg>${0}</arg>
+</arguments>
+<assign>
+<var>${UP_name}</var>
+</assign>
+<msg timestamp="20200423 00:17:54.005" level="INFO">${UP_name} = Anuvrat Singh</msg>
+<status status="PASS" starttime="20200423 00:17:53.991" endtime="20200423 00:17:54.005"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${UP_customer_Name}</arg>
+<arg>${UP_name}</arg>
+<arg>clear = True</arg>
+</arguments>
+<msg timestamp="20200423 00:17:54.007" level="INFO">Typing text 'Anuvrat Singh' into text field 'xpath=//input[@id="name"]'.</msg>
+<status status="PASS" starttime="20200423 00:17:54.006" endtime="20200423 00:17:55.872"></status>
+</kw>
+<kw name="Read Data From Excel" library="ExcelOperations">
+<arguments>
+<arg>${testData_Path}</arg>
+<arg>Address</arg>
+<arg>${row_num}</arg>
+<arg>${1}</arg>
+</arguments>
+<assign>
+<var>${UP_mobile}</var>
+</assign>
+<msg timestamp="20200423 00:17:55.882" level="INFO">${UP_mobile} = 6666666</msg>
+<status status="PASS" starttime="20200423 00:17:55.873" endtime="20200423 00:17:55.882"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${UP_customer_Mobile}</arg>
+<arg>${UP_mobile}</arg>
+<arg>clear=True</arg>
+</arguments>
+<msg timestamp="20200423 00:17:55.883" level="INFO">Typing text '6666666' into text field 'xpath=//input[@id="mobile"]'.</msg>
+<status status="PASS" starttime="20200423 00:17:55.882" endtime="20200423 00:17:57.621"></status>
+</kw>
+<kw name="Read Data From Excel" library="ExcelOperations">
+<arguments>
+<arg>${testData_Path}</arg>
+<arg>Address</arg>
+<arg>${row_num}</arg>
+<arg>${2}</arg>
+</arguments>
+<assign>
+<var>${UP_address1}</var>
+</assign>
+<msg timestamp="20200423 00:17:57.639" level="INFO">${UP_address1} = F-3 Plot No. 70 Sec-5 Rajender Nagar</msg>
+<status status="PASS" starttime="20200423 00:17:57.622" endtime="20200423 00:17:57.639"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${UP_address_Line1}</arg>
+<arg>${UP_address1}</arg>
+<arg>clear=True</arg>
+</arguments>
+<msg timestamp="20200423 00:17:57.641" level="INFO">Typing text 'F-3 Plot No. 70 Sec-5 Rajender Nagar' into text field 'xpath=//input[@id="address1"]'.</msg>
+<status status="PASS" starttime="20200423 00:17:57.640" endtime="20200423 00:17:59.637"></status>
+</kw>
+<kw name="Read Data From Excel" library="ExcelOperations">
+<arguments>
+<arg>${testData_Path}</arg>
+<arg>Address</arg>
+<arg>${row_num}</arg>
+<arg>${3}</arg>
+</arguments>
+<assign>
+<var>${UP_address2}</var>
+</assign>
+<msg timestamp="20200423 00:17:59.655" level="INFO">${UP_address2} = Sahibabad</msg>
+<status status="PASS" starttime="20200423 00:17:59.638" endtime="20200423 00:17:59.655"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${UP_address_Line2}</arg>
+<arg>${UP_address2}</arg>
+<arg>clear=True</arg>
+</arguments>
+<msg timestamp="20200423 00:17:59.657" level="INFO">Typing text 'Sahibabad' into text field 'xpath=//input[@id="address2"]'.</msg>
+<status status="PASS" starttime="20200423 00:17:59.656" endtime="20200423 00:18:01.394"></status>
+</kw>
+<kw name="Read Data From Excel" library="ExcelOperations">
+<arguments>
+<arg>${testData_Path}</arg>
+<arg>Address</arg>
+<arg>${row_num}</arg>
+<arg>${4}</arg>
+</arguments>
+<assign>
+<var>${UP_landmark}</var>
+</assign>
+<msg timestamp="20200423 00:18:01.411" level="INFO">${UP_landmark} = M4U cinema</msg>
+<status status="PASS" starttime="20200423 00:18:01.394" endtime="20200423 00:18:01.412"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${UP_customer_Landmark}</arg>
+<arg>${UP_landmark}</arg>
+<arg>clear=True</arg>
+</arguments>
+<msg timestamp="20200423 00:18:01.413" level="INFO">Typing text 'M4U cinema' into text field 'xpath=//input[@id="landmark"]'.</msg>
+<status status="PASS" starttime="20200423 00:18:01.412" endtime="20200423 00:18:03.175"></status>
+</kw>
+<kw name="Read Data From Excel" library="ExcelOperations">
+<arguments>
+<arg>${testData_Path}</arg>
+<arg>Address</arg>
+<arg>${row_num}</arg>
+<arg>${5}</arg>
+</arguments>
+<assign>
+<var>${UP_city}</var>
+</assign>
+<msg timestamp="20200423 00:18:03.195" level="INFO">${UP_city} = Ghaziabad</msg>
+<status status="PASS" starttime="20200423 00:18:03.175" endtime="20200423 00:18:03.195"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${UP_customer_City}</arg>
+<arg>${UP_city}</arg>
+<arg>clear=True</arg>
+</arguments>
+<msg timestamp="20200423 00:18:03.197" level="INFO">Typing text 'Ghaziabad' into text field 'xpath=//input[@id="city"]'.</msg>
+<status status="PASS" starttime="20200423 00:18:03.196" endtime="20200423 00:18:04.952"></status>
+</kw>
+<kw name="Read Data From Excel" library="ExcelOperations">
+<arguments>
+<arg>${testData_Path}</arg>
+<arg>Address</arg>
+<arg>${row_num}</arg>
+<arg>${6}</arg>
+</arguments>
+<assign>
+<var>${UP_state}</var>
+</assign>
+<msg timestamp="20200423 00:18:04.970" level="INFO">${UP_state} = Uttar Pradesh</msg>
+<status status="PASS" starttime="20200423 00:18:04.952" endtime="20200423 00:18:04.970"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${UP_customer_State}</arg>
+<arg>${UP_state}</arg>
+<arg>clear=True</arg>
+</arguments>
+<msg timestamp="20200423 00:18:04.972" level="INFO">Typing text 'Uttar Pradesh' into text field 'xpath=//input[@id="state"]'.</msg>
+<status status="PASS" starttime="20200423 00:18:04.971" endtime="20200423 00:18:06.774"></status>
+</kw>
+<kw name="Read Data From Excel" library="ExcelOperations">
+<arguments>
+<arg>${testData_Path}</arg>
+<arg>Address</arg>
+<arg>${row_num}</arg>
+<arg>${7}</arg>
+</arguments>
+<assign>
+<var>${UP_pincode}</var>
+</assign>
+<msg timestamp="20200423 00:18:06.783" level="INFO">${UP_pincode} = 400001</msg>
+<status status="PASS" starttime="20200423 00:18:06.775" endtime="20200423 00:18:06.784"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${UP_pincode}</arg>
+</arguments>
+<assign>
+<var>${UP_pincode}</var>
+</assign>
+<msg timestamp="20200423 00:18:06.785" level="INFO">${UP_pincode} = 400001</msg>
+<status status="PASS" starttime="20200423 00:18:06.784" endtime="20200423 00:18:06.785"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${UP_customer_Pincode}</arg>
+<arg>${UP_pincode}</arg>
+<arg>clear=True</arg>
+</arguments>
+<msg timestamp="20200423 00:18:06.785" level="INFO">Typing text '400001' into text field 'xpath=//input[@id="pincode"]'.</msg>
+<status status="PASS" starttime="20200423 00:18:06.785" endtime="20200423 00:18:08.589"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${UP_address_Selector_Office}</arg>
+</arguments>
+<msg timestamp="20200423 00:18:08.591" level="INFO">Clicking element 'xpath=//b[text()="Office"]'.</msg>
+<status status="PASS" starttime="20200423 00:18:08.590" endtime="20200423 00:18:09.705"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${UP_save_Address_Button}</arg>
+</arguments>
+<status status="PASS" starttime="20200423 00:18:09.706" endtime="20200423 00:18:11.275"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${UP_save_Address_Button}</arg>
+</arguments>
+<msg timestamp="20200423 00:18:11.276" level="INFO">Clicking button 'xpath=(//button[@class="btn tab_btn_default w-25"])[1]'.</msg>
+<status status="PASS" starttime="20200423 00:18:11.276" endtime="20200423 00:18:13.929"></status>
+</kw>
+<status status="PASS" starttime="20200423 00:17:53.991" endtime="20200423 00:18:13.929"></status>
+</kw>
+<kw name="${row_num} = 2" type="foritem">
+<kw name="Read Data From Excel" library="ExcelOperations">
+<arguments>
+<arg>${testData_Path}</arg>
+<arg>Address</arg>
+<arg>${row_num}</arg>
+<arg>${0}</arg>
+</arguments>
+<assign>
+<var>${UP_name}</var>
+</assign>
+<msg timestamp="20200423 00:18:13.947" level="INFO">${UP_name} = Anuvrat Singh</msg>
+<status status="PASS" starttime="20200423 00:18:13.930" endtime="20200423 00:18:13.947"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${UP_customer_Name}</arg>
+<arg>${UP_name}</arg>
+<arg>clear = True</arg>
+</arguments>
+<msg timestamp="20200423 00:18:13.949" level="INFO">Typing text 'Anuvrat Singh' into text field 'xpath=//input[@id="name"]'.</msg>
+<status status="PASS" starttime="20200423 00:18:13.948" endtime="20200423 00:18:15.721"></status>
+</kw>
+<kw name="Read Data From Excel" library="ExcelOperations">
+<arguments>
+<arg>${testData_Path}</arg>
+<arg>Address</arg>
+<arg>${row_num}</arg>
+<arg>${1}</arg>
+</arguments>
+<assign>
+<var>${UP_mobile}</var>
+</assign>
+<msg timestamp="20200423 00:18:15.738" level="INFO">${UP_mobile} = 1234567890</msg>
+<status status="PASS" starttime="20200423 00:18:15.722" endtime="20200423 00:18:15.738"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${UP_customer_Mobile}</arg>
+<arg>${UP_mobile}</arg>
+<arg>clear=True</arg>
+</arguments>
+<msg timestamp="20200423 00:18:15.739" level="INFO">Typing text '1234567890' into text field 'xpath=//input[@id="mobile"]'.</msg>
+<status status="PASS" starttime="20200423 00:18:15.738" endtime="20200423 00:18:17.458"></status>
+</kw>
+<kw name="Read Data From Excel" library="ExcelOperations">
+<arguments>
+<arg>${testData_Path}</arg>
+<arg>Address</arg>
+<arg>${row_num}</arg>
+<arg>${2}</arg>
+</arguments>
+<assign>
+<var>${UP_address1}</var>
+</assign>
+<msg timestamp="20200423 00:18:17.476" level="INFO">${UP_address1} = F-3 Plot No. 70 Sec-5 Rajender Nagar</msg>
+<status status="PASS" starttime="20200423 00:18:17.459" endtime="20200423 00:18:17.476"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${UP_address_Line1}</arg>
+<arg>${UP_address1}</arg>
+<arg>clear=True</arg>
+</arguments>
+<msg timestamp="20200423 00:18:17.477" level="INFO">Typing text 'F-3 Plot No. 70 Sec-5 Rajender Nagar' into text field 'xpath=//input[@id="address1"]'.</msg>
+<status status="PASS" starttime="20200423 00:18:17.476" endtime="20200423 00:18:19.370"></status>
+</kw>
+<kw name="Read Data From Excel" library="ExcelOperations">
+<arguments>
+<arg>${testData_Path}</arg>
+<arg>Address</arg>
+<arg>${row_num}</arg>
+<arg>${3}</arg>
+</arguments>
+<assign>
+<var>${UP_address2}</var>
+</assign>
+<msg timestamp="20200423 00:18:19.380" level="INFO">${UP_address2} = Sahibabad</msg>
+<status status="PASS" starttime="20200423 00:18:19.370" endtime="20200423 00:18:19.381"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${UP_address_Line2}</arg>
+<arg>${UP_address2}</arg>
+<arg>clear=True</arg>
+</arguments>
+<msg timestamp="20200423 00:18:19.382" level="INFO">Typing text 'Sahibabad' into text field 'xpath=//input[@id="address2"]'.</msg>
+<status status="PASS" starttime="20200423 00:18:19.381" endtime="20200423 00:18:21.205"></status>
+</kw>
+<kw name="Read Data From Excel" library="ExcelOperations">
+<arguments>
+<arg>${testData_Path}</arg>
+<arg>Address</arg>
+<arg>${row_num}</arg>
+<arg>${4}</arg>
+</arguments>
+<assign>
+<var>${UP_landmark}</var>
+</assign>
+<msg timestamp="20200423 00:18:21.221" level="INFO">${UP_landmark} = M4U cinema</msg>
+<status status="PASS" starttime="20200423 00:18:21.205" endtime="20200423 00:18:21.221"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${UP_customer_Landmark}</arg>
+<arg>${UP_landmark}</arg>
+<arg>clear=True</arg>
+</arguments>
+<msg timestamp="20200423 00:18:21.224" level="INFO">Typing text 'M4U cinema' into text field 'xpath=//input[@id="landmark"]'.</msg>
+<status status="PASS" starttime="20200423 00:18:21.222" endtime="20200423 00:18:22.985"></status>
+</kw>
+<kw name="Read Data From Excel" library="ExcelOperations">
+<arguments>
+<arg>${testData_Path}</arg>
+<arg>Address</arg>
+<arg>${row_num}</arg>
+<arg>${5}</arg>
+</arguments>
+<assign>
+<var>${UP_city}</var>
+</assign>
+<msg timestamp="20200423 00:18:23.003" level="INFO">${UP_city} = Ghaziabad</msg>
+<status status="PASS" starttime="20200423 00:18:22.986" endtime="20200423 00:18:23.003"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${UP_customer_City}</arg>
+<arg>${UP_city}</arg>
+<arg>clear=True</arg>
+</arguments>
+<msg timestamp="20200423 00:18:23.004" level="INFO">Typing text 'Ghaziabad' into text field 'xpath=//input[@id="city"]'.</msg>
+<status status="PASS" starttime="20200423 00:18:23.003" endtime="20200423 00:18:24.750"></status>
+</kw>
+<kw name="Read Data From Excel" library="ExcelOperations">
+<arguments>
+<arg>${testData_Path}</arg>
+<arg>Address</arg>
+<arg>${row_num}</arg>
+<arg>${6}</arg>
+</arguments>
+<assign>
+<var>${UP_state}</var>
+</assign>
+<msg timestamp="20200423 00:18:24.766" level="INFO">${UP_state} = Uttar Pradesh</msg>
+<status status="PASS" starttime="20200423 00:18:24.751" endtime="20200423 00:18:24.766"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${UP_customer_State}</arg>
+<arg>${UP_state}</arg>
+<arg>clear=True</arg>
+</arguments>
+<msg timestamp="20200423 00:18:24.767" level="INFO">Typing text 'Uttar Pradesh' into text field 'xpath=//input[@id="state"]'.</msg>
+<status status="PASS" starttime="20200423 00:18:24.766" endtime="20200423 00:18:26.534"></status>
+</kw>
+<kw name="Read Data From Excel" library="ExcelOperations">
+<arguments>
+<arg>${testData_Path}</arg>
+<arg>Address</arg>
+<arg>${row_num}</arg>
+<arg>${7}</arg>
+</arguments>
+<assign>
+<var>${UP_pincode}</var>
+</assign>
+<msg timestamp="20200423 00:18:26.550" level="INFO">${UP_pincode} = 751001</msg>
+<status status="PASS" starttime="20200423 00:18:26.535" endtime="20200423 00:18:26.550"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${UP_pincode}</arg>
+</arguments>
+<assign>
+<var>${UP_pincode}</var>
+</assign>
+<msg timestamp="20200423 00:18:26.552" level="INFO">${UP_pincode} = 751001</msg>
+<status status="PASS" starttime="20200423 00:18:26.551" endtime="20200423 00:18:26.553"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${UP_customer_Pincode}</arg>
+<arg>${UP_pincode}</arg>
+<arg>clear=True</arg>
+</arguments>
+<msg timestamp="20200423 00:18:26.554" level="INFO">Typing text '751001' into text field 'xpath=//input[@id="pincode"]'.</msg>
+<status status="PASS" starttime="20200423 00:18:26.553" endtime="20200423 00:18:28.254"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${UP_address_Selector_Office}</arg>
+</arguments>
+<msg timestamp="20200423 00:18:28.256" level="INFO">Clicking element 'xpath=//b[text()="Office"]'.</msg>
+<status status="PASS" starttime="20200423 00:18:28.255" endtime="20200423 00:18:29.406"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${UP_save_Address_Button}</arg>
+</arguments>
+<status status="PASS" starttime="20200423 00:18:29.407" endtime="20200423 00:18:30.971"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${UP_save_Address_Button}</arg>
+</arguments>
+<msg timestamp="20200423 00:18:30.972" level="INFO">Clicking button 'xpath=(//button[@class="btn tab_btn_default w-25"])[1]'.</msg>
+<status status="PASS" starttime="20200423 00:18:30.971" endtime="20200423 00:18:33.603"></status>
+</kw>
+<status status="PASS" starttime="20200423 00:18:13.930" endtime="20200423 00:18:33.603"></status>
+</kw>
+<kw name="${row_num} = 3" type="foritem">
+<kw name="Read Data From Excel" library="ExcelOperations">
+<arguments>
+<arg>${testData_Path}</arg>
+<arg>Address</arg>
+<arg>${row_num}</arg>
+<arg>${0}</arg>
+</arguments>
+<assign>
+<var>${UP_name}</var>
+</assign>
+<msg timestamp="20200423 00:18:33.622" level="INFO">${UP_name} = Anuvrat Singh</msg>
+<status status="PASS" starttime="20200423 00:18:33.604" endtime="20200423 00:18:33.622"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${UP_customer_Name}</arg>
+<arg>${UP_name}</arg>
+<arg>clear = True</arg>
+</arguments>
+<msg timestamp="20200423 00:18:33.623" level="INFO">Typing text 'Anuvrat Singh' into text field 'xpath=//input[@id="name"]'.</msg>
+<status status="PASS" starttime="20200423 00:18:33.622" endtime="20200423 00:18:35.385"></status>
+</kw>
+<kw name="Read Data From Excel" library="ExcelOperations">
+<arguments>
+<arg>${testData_Path}</arg>
+<arg>Address</arg>
+<arg>${row_num}</arg>
+<arg>${1}</arg>
+</arguments>
+<assign>
+<var>${UP_mobile}</var>
+</assign>
+<msg timestamp="20200423 00:18:35.403" level="INFO">${UP_mobile} = abc123387</msg>
+<status status="PASS" starttime="20200423 00:18:35.386" endtime="20200423 00:18:35.404"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${UP_customer_Mobile}</arg>
+<arg>${UP_mobile}</arg>
+<arg>clear=True</arg>
+</arguments>
+<msg timestamp="20200423 00:18:35.405" level="INFO">Typing text 'abc123387' into text field 'xpath=//input[@id="mobile"]'.</msg>
+<status status="PASS" starttime="20200423 00:18:35.404" endtime="20200423 00:18:37.234"></status>
+</kw>
+<kw name="Read Data From Excel" library="ExcelOperations">
+<arguments>
+<arg>${testData_Path}</arg>
+<arg>Address</arg>
+<arg>${row_num}</arg>
+<arg>${2}</arg>
+</arguments>
+<assign>
+<var>${UP_address1}</var>
+</assign>
+<msg timestamp="20200423 00:18:37.249" level="INFO">${UP_address1} = F-3 Plot No. 70 Sec-5 Rajender Nagar</msg>
+<status status="PASS" starttime="20200423 00:18:37.235" endtime="20200423 00:18:37.249"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${UP_address_Line1}</arg>
+<arg>${UP_address1}</arg>
+<arg>clear=True</arg>
+</arguments>
+<msg timestamp="20200423 00:18:37.250" level="INFO">Typing text 'F-3 Plot No. 70 Sec-5 Rajender Nagar' into text field 'xpath=//input[@id="address1"]'.</msg>
+<status status="PASS" starttime="20200423 00:18:37.250" endtime="20200423 00:18:39.271"></status>
+</kw>
+<kw name="Read Data From Excel" library="ExcelOperations">
+<arguments>
+<arg>${testData_Path}</arg>
+<arg>Address</arg>
+<arg>${row_num}</arg>
+<arg>${3}</arg>
+</arguments>
+<assign>
+<var>${UP_address2}</var>
+</assign>
+<msg timestamp="20200423 00:18:39.289" level="INFO">${UP_address2} = Sahibabad</msg>
+<status status="PASS" starttime="20200423 00:18:39.271" endtime="20200423 00:18:39.290"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${UP_address_Line2}</arg>
+<arg>${UP_address2}</arg>
+<arg>clear=True</arg>
+</arguments>
+<msg timestamp="20200423 00:18:39.291" level="INFO">Typing text 'Sahibabad' into text field 'xpath=//input[@id="address2"]'.</msg>
+<status status="PASS" starttime="20200423 00:18:39.290" endtime="20200423 00:18:40.970"></status>
+</kw>
+<kw name="Read Data From Excel" library="ExcelOperations">
+<arguments>
+<arg>${testData_Path}</arg>
+<arg>Address</arg>
+<arg>${row_num}</arg>
+<arg>${4}</arg>
+</arguments>
+<assign>
+<var>${UP_landmark}</var>
+</assign>
+<msg timestamp="20200423 00:18:40.988" level="INFO">${UP_landmark} = M4U cinema</msg>
+<status status="PASS" starttime="20200423 00:18:40.971" endtime="20200423 00:18:40.989"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${UP_customer_Landmark}</arg>
+<arg>${UP_landmark}</arg>
+<arg>clear=True</arg>
+</arguments>
+<msg timestamp="20200423 00:18:40.989" level="INFO">Typing text 'M4U cinema' into text field 'xpath=//input[@id="landmark"]'.</msg>
+<status status="PASS" starttime="20200423 00:18:40.989" endtime="20200423 00:18:42.671"></status>
+</kw>
+<kw name="Read Data From Excel" library="ExcelOperations">
+<arguments>
+<arg>${testData_Path}</arg>
+<arg>Address</arg>
+<arg>${row_num}</arg>
+<arg>${5}</arg>
+</arguments>
+<assign>
+<var>${UP_city}</var>
+</assign>
+<msg timestamp="20200423 00:18:42.684" level="INFO">${UP_city} = Ghaziabad</msg>
+<status status="PASS" starttime="20200423 00:18:42.671" endtime="20200423 00:18:42.684"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${UP_customer_City}</arg>
+<arg>${UP_city}</arg>
+<arg>clear=True</arg>
+</arguments>
+<msg timestamp="20200423 00:18:42.686" level="INFO">Typing text 'Ghaziabad' into text field 'xpath=//input[@id="city"]'.</msg>
+<status status="PASS" starttime="20200423 00:18:42.685" endtime="20200423 00:18:44.375"></status>
+</kw>
+<kw name="Read Data From Excel" library="ExcelOperations">
+<arguments>
+<arg>${testData_Path}</arg>
+<arg>Address</arg>
+<arg>${row_num}</arg>
+<arg>${6}</arg>
+</arguments>
+<assign>
+<var>${UP_state}</var>
+</assign>
+<msg timestamp="20200423 00:18:44.389" level="INFO">${UP_state} = Uttar Pradesh</msg>
+<status status="PASS" starttime="20200423 00:18:44.376" endtime="20200423 00:18:44.389"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${UP_customer_State}</arg>
+<arg>${UP_state}</arg>
+<arg>clear=True</arg>
+</arguments>
+<msg timestamp="20200423 00:18:44.390" level="INFO">Typing text 'Uttar Pradesh' into text field 'xpath=//input[@id="state"]'.</msg>
+<status status="PASS" starttime="20200423 00:18:44.389" endtime="20200423 00:18:46.107"></status>
+</kw>
+<kw name="Read Data From Excel" library="ExcelOperations">
+<arguments>
+<arg>${testData_Path}</arg>
+<arg>Address</arg>
+<arg>${row_num}</arg>
+<arg>${7}</arg>
+</arguments>
+<assign>
+<var>${UP_pincode}</var>
+</assign>
+<msg timestamp="20200423 00:18:46.119" level="INFO">${UP_pincode} = 194104</msg>
+<status status="PASS" starttime="20200423 00:18:46.107" endtime="20200423 00:18:46.119"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${UP_pincode}</arg>
+</arguments>
+<assign>
+<var>${UP_pincode}</var>
+</assign>
+<msg timestamp="20200423 00:18:46.120" level="INFO">${UP_pincode} = 194104</msg>
+<status status="PASS" starttime="20200423 00:18:46.119" endtime="20200423 00:18:46.120"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${UP_customer_Pincode}</arg>
+<arg>${UP_pincode}</arg>
+<arg>clear=True</arg>
+</arguments>
+<msg timestamp="20200423 00:18:46.121" level="INFO">Typing text '194104' into text field 'xpath=//input[@id="pincode"]'.</msg>
+<status status="PASS" starttime="20200423 00:18:46.120" endtime="20200423 00:18:47.850"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${UP_address_Selector_Office}</arg>
+</arguments>
+<msg timestamp="20200423 00:18:47.851" level="INFO">Clicking element 'xpath=//b[text()="Office"]'.</msg>
+<status status="PASS" starttime="20200423 00:18:47.850" endtime="20200423 00:18:48.932"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${UP_save_Address_Button}</arg>
+</arguments>
+<status status="PASS" starttime="20200423 00:18:48.932" endtime="20200423 00:18:50.496"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${UP_save_Address_Button}</arg>
+</arguments>
+<msg timestamp="20200423 00:18:50.497" level="INFO">Clicking button 'xpath=(//button[@class="btn tab_btn_default w-25"])[1]'.</msg>
+<status status="PASS" starttime="20200423 00:18:50.496" endtime="20200423 00:18:53.162"></status>
+</kw>
+<status status="PASS" starttime="20200423 00:18:33.603" endtime="20200423 00:18:53.162"></status>
+</kw>
+<kw name="${row_num} = 4" type="foritem">
+<kw name="Read Data From Excel" library="ExcelOperations">
+<arguments>
+<arg>${testData_Path}</arg>
+<arg>Address</arg>
+<arg>${row_num}</arg>
+<arg>${0}</arg>
+</arguments>
+<assign>
+<var>${UP_name}</var>
+</assign>
+<msg timestamp="20200423 00:18:53.174" level="INFO">${UP_name} = Anuvrat Singh</msg>
+<status status="PASS" starttime="20200423 00:18:53.162" endtime="20200423 00:18:53.174"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${UP_customer_Name}</arg>
+<arg>${UP_name}</arg>
+<arg>clear = True</arg>
+</arguments>
+<msg timestamp="20200423 00:18:53.175" level="INFO">Typing text 'Anuvrat Singh' into text field 'xpath=//input[@id="name"]'.</msg>
+<status status="PASS" starttime="20200423 00:18:53.175" endtime="20200423 00:18:54.937"></status>
+</kw>
+<kw name="Read Data From Excel" library="ExcelOperations">
+<arguments>
+<arg>${testData_Path}</arg>
+<arg>Address</arg>
+<arg>${row_num}</arg>
+<arg>${1}</arg>
+</arguments>
+<assign>
+<var>${UP_mobile}</var>
+</assign>
+<msg timestamp="20200423 00:18:55.007" level="INFO">${UP_mobile} = 9899958909</msg>
+<status status="PASS" starttime="20200423 00:18:54.937" endtime="20200423 00:18:55.008"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${UP_customer_Mobile}</arg>
+<arg>${UP_mobile}</arg>
+<arg>clear=True</arg>
+</arguments>
+<msg timestamp="20200423 00:18:55.008" level="INFO">Typing text '9899958909' into text field 'xpath=//input[@id="mobile"]'.</msg>
+<status status="PASS" starttime="20200423 00:18:55.008" endtime="20200423 00:18:56.720"></status>
+</kw>
+<kw name="Read Data From Excel" library="ExcelOperations">
+<arguments>
+<arg>${testData_Path}</arg>
+<arg>Address</arg>
+<arg>${row_num}</arg>
+<arg>${2}</arg>
+</arguments>
+<assign>
+<var>${UP_address1}</var>
+</assign>
+<msg timestamp="20200423 00:18:56.736" level="INFO">${UP_address1} = F-3 Plot No. 70 Sec-5 Rajender Nagar</msg>
+<status status="PASS" starttime="20200423 00:18:56.720" endtime="20200423 00:18:56.737"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${UP_address_Line1}</arg>
+<arg>${UP_address1}</arg>
+<arg>clear=True</arg>
+</arguments>
+<msg timestamp="20200423 00:18:56.738" level="INFO">Typing text 'F-3 Plot No. 70 Sec-5 Rajender Nagar' into text field 'xpath=//input[@id="address1"]'.</msg>
+<status status="PASS" starttime="20200423 00:18:56.737" endtime="20200423 00:18:58.759"></status>
+</kw>
+<kw name="Read Data From Excel" library="ExcelOperations">
+<arguments>
+<arg>${testData_Path}</arg>
+<arg>Address</arg>
+<arg>${row_num}</arg>
+<arg>${3}</arg>
+</arguments>
+<assign>
+<var>${UP_address2}</var>
+</assign>
+<msg timestamp="20200423 00:18:58.774" level="INFO">${UP_address2} = Sahibabad</msg>
+<status status="PASS" starttime="20200423 00:18:58.760" endtime="20200423 00:18:58.774"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${UP_address_Line2}</arg>
+<arg>${UP_address2}</arg>
+<arg>clear=True</arg>
+</arguments>
+<msg timestamp="20200423 00:18:58.775" level="INFO">Typing text 'Sahibabad' into text field 'xpath=//input[@id="address2"]'.</msg>
+<status status="PASS" starttime="20200423 00:18:58.774" endtime="20200423 00:19:00.506"></status>
+</kw>
+<kw name="Read Data From Excel" library="ExcelOperations">
+<arguments>
+<arg>${testData_Path}</arg>
+<arg>Address</arg>
+<arg>${row_num}</arg>
+<arg>${4}</arg>
+</arguments>
+<assign>
+<var>${UP_landmark}</var>
+</assign>
+<msg timestamp="20200423 00:19:00.521" level="INFO">${UP_landmark} = M4U cinema</msg>
+<status status="PASS" starttime="20200423 00:19:00.507" endtime="20200423 00:19:00.521"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${UP_customer_Landmark}</arg>
+<arg>${UP_landmark}</arg>
+<arg>clear=True</arg>
+</arguments>
+<msg timestamp="20200423 00:19:00.522" level="INFO">Typing text 'M4U cinema' into text field 'xpath=//input[@id="landmark"]'.</msg>
+<status status="PASS" starttime="20200423 00:19:00.521" endtime="20200423 00:19:02.216"></status>
+</kw>
+<kw name="Read Data From Excel" library="ExcelOperations">
+<arguments>
+<arg>${testData_Path}</arg>
+<arg>Address</arg>
+<arg>${row_num}</arg>
+<arg>${5}</arg>
+</arguments>
+<assign>
+<var>${UP_city}</var>
+</assign>
+<msg timestamp="20200423 00:19:02.230" level="INFO">${UP_city} = Ghaziabad</msg>
+<status status="PASS" starttime="20200423 00:19:02.216" endtime="20200423 00:19:02.231"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${UP_customer_City}</arg>
+<arg>${UP_city}</arg>
+<arg>clear=True</arg>
+</arguments>
+<msg timestamp="20200423 00:19:02.232" level="INFO">Typing text 'Ghaziabad' into text field 'xpath=//input[@id="city"]'.</msg>
+<status status="PASS" starttime="20200423 00:19:02.231" endtime="20200423 00:19:03.911"></status>
+</kw>
+<kw name="Read Data From Excel" library="ExcelOperations">
+<arguments>
+<arg>${testData_Path}</arg>
+<arg>Address</arg>
+<arg>${row_num}</arg>
+<arg>${6}</arg>
+</arguments>
+<assign>
+<var>${UP_state}</var>
+</assign>
+<msg timestamp="20200423 00:19:03.929" level="INFO">${UP_state} = Uttar Pradesh</msg>
+<status status="PASS" starttime="20200423 00:19:03.911" endtime="20200423 00:19:03.929"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${UP_customer_State}</arg>
+<arg>${UP_state}</arg>
+<arg>clear=True</arg>
+</arguments>
+<msg timestamp="20200423 00:19:03.931" level="INFO">Typing text 'Uttar Pradesh' into text field 'xpath=//input[@id="state"]'.</msg>
+<status status="PASS" starttime="20200423 00:19:03.930" endtime="20200423 00:19:05.802"></status>
+</kw>
+<kw name="Read Data From Excel" library="ExcelOperations">
+<arguments>
+<arg>${testData_Path}</arg>
+<arg>Address</arg>
+<arg>${row_num}</arg>
+<arg>${7}</arg>
+</arguments>
+<assign>
+<var>${UP_pincode}</var>
+</assign>
+<msg timestamp="20200423 00:19:05.823" level="INFO">${UP_pincode} = 110075</msg>
+<status status="PASS" starttime="20200423 00:19:05.803" endtime="20200423 00:19:05.824"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${UP_pincode}</arg>
+</arguments>
+<assign>
+<var>${UP_pincode}</var>
+</assign>
+<msg timestamp="20200423 00:19:05.825" level="INFO">${UP_pincode} = 110075</msg>
+<status status="PASS" starttime="20200423 00:19:05.824" endtime="20200423 00:19:05.825"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${UP_customer_Pincode}</arg>
+<arg>${UP_pincode}</arg>
+<arg>clear=True</arg>
+</arguments>
+<msg timestamp="20200423 00:19:05.826" level="INFO">Typing text '110075' into text field 'xpath=//input[@id="pincode"]'.</msg>
+<status status="PASS" starttime="20200423 00:19:05.826" endtime="20200423 00:19:07.627"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${UP_address_Selector_Office}</arg>
+</arguments>
+<msg timestamp="20200423 00:19:07.629" level="INFO">Clicking element 'xpath=//b[text()="Office"]'.</msg>
+<status status="PASS" starttime="20200423 00:19:07.628" endtime="20200423 00:19:08.784"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${UP_save_Address_Button}</arg>
+</arguments>
+<status status="PASS" starttime="20200423 00:19:08.784" endtime="20200423 00:19:10.351"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${UP_save_Address_Button}</arg>
+</arguments>
+<msg timestamp="20200423 00:19:10.353" level="INFO">Clicking button 'xpath=(//button[@class="btn tab_btn_default w-25"])[1]'.</msg>
+<status status="PASS" starttime="20200423 00:19:10.352" endtime="20200423 00:19:13.021"></status>
+</kw>
+<status status="PASS" starttime="20200423 00:18:53.162" endtime="20200423 00:19:13.021"></status>
+</kw>
+<status status="PASS" starttime="20200423 00:17:33.418" endtime="20200423 00:19:13.021"></status>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<arguments>
+<arg>${UP_select_First_Address}</arg>
+</arguments>
+<msg timestamp="20200423 00:19:13.574" level="INFO">Suppressing StaleElementReferenceException from Selenium.</msg>
+<status status="PASS" starttime="20200423 00:19:13.022" endtime="20200423 00:19:15.314"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${UP_select_First_Address}</arg>
+</arguments>
+<msg timestamp="20200423 00:19:15.315" level="INFO">Clicking element 'xpath=//span[@class="tab_checkmark"]'.</msg>
+<status status="PASS" starttime="20200423 00:19:15.314" endtime="20200423 00:19:16.447"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${UP_addressConfirm_Button}</arg>
+</arguments>
+<msg timestamp="20200423 00:19:16.448" level="INFO">Clicking element 'xpath=//button[text()="Confirm"]'.</msg>
+<status status="PASS" starttime="20200423 00:19:16.448" endtime="20200423 00:19:17.587"></status>
+</kw>
+<status status="PASS" starttime="20200423 00:17:30.176" endtime="20200423 00:19:17.587"></status>
+</kw>
+<status status="PASS" starttime="20200423 00:17:19.227" endtime="20200423 00:19:17.587"></status>
+</kw>
+<kw name="User Logsout" library="HomePage">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${Logout}</arg>
+</arguments>
+<msg timestamp="20200423 00:19:17.590" level="INFO">Clicking element 'xpath=//div[@class="p-1 tab_options_btns ng-tns-c8-0 ng-star-inserted"][1]'.</msg>
+<status status="PASS" starttime="20200423 00:19:17.589" endtime="20200423 00:19:18.782"></status>
+</kw>
+<status status="PASS" starttime="20200423 00:19:17.588" endtime="20200423 00:19:18.782"></status>
+</kw>
+<status status="PASS" starttime="20200423 00:16:53.143" endtime="20200423 00:19:18.782" critical="yes"></status>
+</test>
 <kw name="Close Browser" library="SeleniumLibrary" type="teardown">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20200422 01:40:12.871" endtime="20200422 01:40:13.878"></status>
+<status status="PASS" starttime="20200423 00:19:18.783" endtime="20200423 00:19:19.339"></status>
 </kw>
-<status status="FAIL" starttime="20200422 01:38:17.477" endtime="20200422 01:40:13.879" critical="yes">Element with locator 'xpath=//input[@id="city"]' not found.</status>
-</test>
-<status status="FAIL" starttime="20200422 01:38:17.457" endtime="20200422 01:40:13.881"></status>
+<status status="PASS" starttime="20200423 00:16:32.284" endtime="20200423 00:19:19.339"></status>
 </suite>
-<status status="FAIL" starttime="20200422 01:37:29.747" endtime="20200422 01:40:13.886"></status>
+<status status="FAIL" starttime="20200423 00:16:06.893" endtime="20200423 00:19:19.343"></status>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="2">Critical Tests</stat>
-<stat pass="0" fail="2">All Tests</stat>
+<stat pass="1" fail="1">Critical Tests</stat>
+<stat pass="1" fail="1">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="2" id="s1" name="Testcases">Testcases</stat>
+<stat pass="1" fail="1" id="s1" name="Testcases">Testcases</stat>
 <stat pass="0" fail="1" id="s1-s1" name="EndToEnd">Testcases.EndToEnd</stat>
-<stat pass="0" fail="1" id="s1-s2" name="UploadPrescriptionFlow">Testcases.UploadPrescriptionFlow</stat>
+<stat pass="1" fail="0" id="s1-s2" name="UploadPrescriptionFlow">Testcases.UploadPrescriptionFlow</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20200422 01:40:12.704" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
-  (Session info: chrome=80.0.3987.162)
-</msg>
+<msg timestamp="20200423 00:16:32.295" level="ERROR">Error in file '/home/deadpool/PycharmProjects/1Tab_Automation/1Tab_WebApp/Testcases/UploadPrescriptionFlow.robot': Resource file 'Common.robot' does not exist.</msg>
 </errors>
 </robot>
