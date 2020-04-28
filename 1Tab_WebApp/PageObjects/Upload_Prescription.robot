@@ -55,10 +55,10 @@ User adds a new address via upload prescription
     \    Click Element  ${UP_address_Selector_Office}
     \    Wait Until Element Is Enabled  ${UP_save_Address_Button}
     \    Click Button  ${UP_save_Address_Button}
-#    Sleep  2s
+
+    Set Selenium Speed  0.5 seconds
     Wait Until Element Is Enabled  ${UP_select_First_Address}
     Click Element  ${UP_select_First_Address}
-#    Sleep  2s
     Click Element  ${UP_addressConfirm_Button}
 
 Place Order Via Upload Prescription Flow

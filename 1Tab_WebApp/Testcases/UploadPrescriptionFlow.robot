@@ -1,12 +1,11 @@
 *** Settings ***
 Library  SeleniumLibrary
 Resource  ../Keywords/Keywords.robot
-Resource  Common.robot
+Resource  ../Keywords/Common.robot
+Resource  ../PageObjects/HomePage.robot
 
 Suite Setup  Website is up and running
 Suite Teardown  Close Browser
-Resource  ../Keywords/Common.robot
-Resource  ../PageObjects/HomePage.robot
 
 *** Test Cases ***
 Verify upload prescription flow is working

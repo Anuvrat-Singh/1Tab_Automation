@@ -28,6 +28,7 @@ User applies 1TAB coupon on cart page
     Page Should Contain Element  ${coupon_Failure}
 
 User uploads a prescription in cart
+    Set Selenium implicit wait  10 seconds
     Click Element  ${uploadPrescriptionCart_Button}
     Wait Until Page Contains Element  ${fileUpload_Form}
     Wait Until Element Is Enabled  ${fileUpload_Selector}

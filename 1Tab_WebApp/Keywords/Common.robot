@@ -1,7 +1,7 @@
 *** Settings ***
 Library  SeleniumLibrary
-Resource  ../Locators/HomePage.robot
-Resource  ../Locators/Order_Status.robot
+Resource  ../PageObjects/HomePage.robot
+Resource  ../PageObjects/Order_Status.robot
 Variables  ../Config/config.py
 
 *** Keywords ***

@@ -3,7 +3,7 @@ Library  SeleniumLibrary
 Resource  ../Keywords/Keywords.robot
 
 Suite Setup  Website is up and running
-Suite Teardown  Close Browser
+#Suite Teardown  Close Browser
 
 *** Test Cases ***
 Smoke Testing of a build
@@ -19,3 +19,5 @@ Smoke Testing of a build
     Thank You message is displayed to user
     User Logsout
 
+Test searchBar
+    User searches an item

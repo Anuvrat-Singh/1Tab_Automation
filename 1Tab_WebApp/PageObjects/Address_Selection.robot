@@ -48,7 +48,7 @@ User adds a new address
     \    Click Button  ${save_Address_Button}
 #    \    Click Element  ${clear_Button}
 
-    Set Selenium Implicit Wait  10 seconds
+    Set Selenium Speed  1 seconds
     Wait Until Element Is Enabled  ${select_First_Address}
     Click Element  ${select_First_Address}
     Click Button  ${make_Payment_Button}
